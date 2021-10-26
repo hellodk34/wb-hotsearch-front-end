@@ -100,6 +100,30 @@ class Markdown extends PureComponent {
                     pagination={false}
                     bordered={true}
                 />
+                <footer class="footer-area footer--light">
+                    <div class="mini-footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="copyright-text">
+                                        <p>© 2021
+                                            <a href="https://hellodk.com" target="_blank" rel="noreferrer"> hellodk.com</a> All rights reserved.
+                                        </p>
+                                        <p>
+                                            Telegram channel: <a href="https://t.me/weibo_hot_search" target="_blank" rel="noreferrer"> 微博热搜实时推送</a>.
+                                        </p>
+                                        <p>
+                                            Powered by <a href="https://github.com/hellodk34/weibo_hot_search" target="_blank" rel="noreferrer"> weibo_hot_search</a>.
+                                        </p>
+                                    </div>
+                                    {/* <div class="go_top">
+                                        <span class="icon-arrow-up"></span>
+                                    </div> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
         );
     }
