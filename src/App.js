@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import ReactClipboard from "react-clipboardjs-copy";
-import { Table, Button } from "antd";
+import { Table, Button, ConfigProvider } from "antd";
+import { SmileOutlined } from '@ant-design/icons';
 import "./App.css";
 import request from "./HttpHelper.js";
 
@@ -38,6 +39,23 @@ class Markdown extends PureComponent {
         const postTitle = detail && detail.postTitle;
         const content = detail && detail.content;
         var jsonStr = JSON.parse(content);
+
+        const customizeRenderEmpty = () => (
+            // 自定义的空状态
+            (isNanjing && isNanjing === true) ?
+                <div style={{ textAlign: 'center' }}>
+                    <SmileOutlined />
+                    <p>南京同城热搜的推送时间是每天的 8、12、19 点，每个整点推送。</p>
+                    <p>可用数据 since: 2021-10-29 19:00:00</p>
+                </div>
+                :
+                <div style={{ textAlign: 'center' }}>
+                    <SmileOutlined />
+                    <p>微博热搜的推送时间是每天的 6 到 23 点，每个整点的 10 分推送。</p>
+                    <p>可用数据 since: 2021-10-19 23:00:00</p>
+                </div>
+        );
+
         const columns = [
             {
                 title: "序号",
@@ -135,21 +153,23 @@ class Markdown extends PureComponent {
                 <div className="titleDiv">
                     <div id="title">{postTitle}</div>
                 </div>
-                <Table
-                    className="markdown-body"
-                    rowKey={(record) => record.desc}
-                    dataSource={jsonStr}
-                    columns={columns}
-                    loading={loading}
-                    pagination={false}
-                    bordered={true}
-                />
-                <footer class="footer-area footer--light">
-                    <div class="mini-footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="copyright-text">
+                <ConfigProvider renderEmpty={customizeRenderEmpty}>
+                    <Table
+                        className="markdown-body"
+                        rowKey={(record) => record.desc}
+                        dataSource={jsonStr}
+                        columns={columns}
+                        loading={loading}
+                        pagination={false}
+                        bordered={true}
+                    />
+                </ConfigProvider>
+                <footer className="footer-area footer--light">
+                    <div className="mini-footer">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <div className="copyright-text">
                                         <p>© 2021
                                             <a href="https://hellodk.com" target="_blank" rel="noreferrer"> hellodk.com</a> All rights reserved.
                                         </p>
