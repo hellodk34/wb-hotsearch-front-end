@@ -5,6 +5,8 @@
 - 展示热搜，使用 `antd` Table 组件
 - 提供了多个 copy 按钮，可以快速拷贝 title 或 link 到剪贴板
 
+对应后端项目: [back-end](https://github.com/hellodk34/weibo_hot_search)
+
 后续闲了再给 https://weibo.hellodk.com 做一个首页，以及全局搜索功能，方便对历史热搜归档和检索。
 
 频道链接: https://t.me/weibo_hot_search ，欢迎大家关注订阅。
