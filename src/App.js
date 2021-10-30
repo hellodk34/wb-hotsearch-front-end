@@ -47,12 +47,14 @@ class Markdown extends PureComponent {
                     <SmileOutlined />
                     <p>南京同城热搜的推送时间是每天的 8、12、19 点，每个整点推送。</p>
                     <p>可用数据 since: 2021-10-29 19:00:00</p>
+                    <p>request url example: <a href="https://weibo.hellodk.com/get?time=2021-10-29-19&city=nanjing" target="_blank" rel="noreferrer">https://weibo.hellodk.com/get?time=2021-10-29-19&city=nanjing</a></p>
                 </div>
                 :
                 <div style={{ textAlign: 'center' }}>
                     <SmileOutlined />
                     <p>微博热搜的推送时间是每天的 6 到 23 点，每个整点的 10 分推送。</p>
                     <p>可用数据 since: 2021-10-19 23:00:00</p>
+                    <p>request url example: <a href="https://weibo.hellodk.com/get?time=2021-10-19-23" target="_blank" rel="noreferrer">https://weibo.hellodk.com/get?time=2021-10-19-23</a></p>
                 </div>
         );
 
